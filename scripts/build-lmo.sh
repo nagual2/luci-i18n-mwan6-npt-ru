@@ -36,8 +36,10 @@ ensure_sdk() {
 	fi
 	log "Building luci-base/host (po2lmo)..."
 	cd "$SDK_DIR"
+	[ -f .config ] || make defconfig
 	./scripts/feeds update luci
 	./scripts/feeds install -p luci luci-base
+	make defconfig
 	make "package/luci-base/host/compile" -j"$(nproc)" V=s \
 		|| make "package/luci-base/host/compile" -j1 V=s
 }
