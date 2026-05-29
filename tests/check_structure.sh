@@ -7,10 +7,16 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 required=(
 	Makefile
 	Makefile.build
+	LICENSE
+	NOTICE
+	README.md
+	README.ru.md
+	README.de.md
 	po/ru/mwan6-npt.po
 	root/etc/uci-defaults/50-luci-i18n-mwan6-npt-ru
 	scripts/build-lmo.sh
 	scripts/build-apk-mkpkg.sh
+	scripts/stage-docs.sh
 )
 
 for path in "${required[@]}"; do

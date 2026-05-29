@@ -4,7 +4,7 @@ SHELL := /bin/sh
 PKG_NAME := luci-i18n-mwan6-npt-ru
 PROJECT_VERSION ?=
 GIT_TAG := $(strip $(shell git describe --tags --match 'v*' --abbrev=0 2>/dev/null || true))
-PKG_VERSION := $(strip $(if $(PROJECT_VERSION),$(PROJECT_VERSION),$(if $(GIT_TAG),$(patsubst v%,%,$(GIT_TAG)),1.0.1)))
+PKG_VERSION := $(strip $(if $(PROJECT_VERSION),$(PROJECT_VERSION),$(if $(GIT_TAG),$(patsubst v%,%,$(GIT_TAG)),1.0.2)))
 PKG_RELEASE ?= 1
 
 OUTPUT_DIR ?= dist
@@ -28,13 +28,15 @@ $(LMO_FILE): po/ru/mwan6-npt.po scripts/build-lmo.sh
 
 ipk: $(IPK_PATH)
 
-$(IPK_PATH): $(LMO_FILE) root/etc/uci-defaults/50-luci-i18n-mwan6-npt-ru
+$(IPK_PATH): $(LMO_FILE) root/etc/uci-defaults/50-luci-i18n-mwan6-npt-ru LICENSE NOTICE README.md README.ru.md README.de.md scripts/stage-docs.sh
 > @echo "Building IPK $(PKG_NAME) $(PKG_VERSION)-$(PKG_RELEASE)..."
 > rm -rf $(WORK_DIR)
 > mkdir -p $(DATA_DIR)/usr/lib/lua/luci/i18n
 > mkdir -p $(DATA_DIR)/etc/uci-defaults
 > install -m 0644 $(LMO_FILE) $(DATA_DIR)/usr/lib/lua/luci/i18n/
 > install -m 0755 root/etc/uci-defaults/50-luci-i18n-mwan6-npt-ru $(DATA_DIR)/etc/uci-defaults/
+> chmod +x scripts/stage-docs.sh
+> ./scripts/stage-docs.sh $(DATA_DIR) luci-i18n-mwan6-npt-ru
 > mkdir -p $(CONTROL_DIR)
 > printf 'Package: %s\n' $(PKG_NAME) > $(CONTROL_DIR)/control
 > printf 'Version: %s-%s\n' $(PKG_VERSION) $(PKG_RELEASE) >> $(CONTROL_DIR)/control

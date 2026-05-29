@@ -2,16 +2,17 @@
 # Copyright (C) 2026 OpenWrt Community
 #
 # Russian translation package for luci-app-mwan6-npt.
-# Licensed under GPL-2.0 (same as LuCI).
+# Licensed under the Apache License, Version 2.0 (same as LuCI).
 
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-i18n-mwan6-npt-ru
-PKG_VERSION?=1.0.1
+PKG_VERSION?=1.0.2
 PKG_RELEASE?=1
 
 PKG_MAINTAINER:=OpenWrt Community
 PKG_LICENSE:=Apache-2.0
+PKG_LICENSE_FILES:=LICENSE NOTICE
 
 PKG_BUILD_DEPENDS:=luci-base/host
 
@@ -43,6 +44,12 @@ define Package/luci-i18n-mwan6-npt-ru/install
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	echo "uci set luci.languages.ru='Русский (Russian)'; uci commit luci" \
 		> $(1)/etc/uci-defaults/50-luci-i18n-mwan6-npt-ru
+	$(INSTALL_DIR) $(1)/usr/share/doc/luci-i18n-mwan6-npt-ru
+	$(INSTALL_DATA) $(CURDIR)/LICENSE $(1)/usr/share/doc/luci-i18n-mwan6-npt-ru/
+	$(INSTALL_DATA) $(CURDIR)/NOTICE $(1)/usr/share/doc/luci-i18n-mwan6-npt-ru/
+	$(INSTALL_DATA) $(CURDIR)/README.md $(1)/usr/share/doc/luci-i18n-mwan6-npt-ru/README.en.md
+	$(INSTALL_DATA) $(CURDIR)/README.ru.md $(1)/usr/share/doc/luci-i18n-mwan6-npt-ru/
+	$(INSTALL_DATA) $(CURDIR)/README.de.md $(1)/usr/share/doc/luci-i18n-mwan6-npt-ru/
 endef
 
 define Package/luci-i18n-mwan6-npt-ru/postinst

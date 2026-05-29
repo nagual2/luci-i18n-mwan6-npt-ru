@@ -12,7 +12,7 @@ APK_TOOL="${APK_TOOL:-$SDK_DIR/staging_dir/host/bin/apk}"
 LMO_FILE="${LMO_FILE:-$ROOT/build/mwan6-npt.ru.lmo}"
 
 PROJECT_VERSION="${PROJECT_VERSION:-$(git -C "$ROOT" describe --tags --match 'v*' 2>/dev/null | sed 's/^v//')}"
-PROJECT_VERSION="${PROJECT_VERSION:-1.0.0}"
+PROJECT_VERSION="${PROJECT_VERSION:-1.0.2}"
 PKG_RELEASE="${PKG_RELEASE:-1}"
 PKG_VERSION="${PROJECT_VERSION}-r${PKG_RELEASE}"
 
@@ -52,6 +52,9 @@ trap 'rm -rf "$STAGE" "$POSTINST"' EXIT
 install -d "$STAGE/usr/lib/lua/luci/i18n" "$STAGE/etc/uci-defaults"
 install -m 0644 "$LMO_FILE" "$STAGE/usr/lib/lua/luci/i18n/mwan6-npt.ru.lmo"
 install -m 0755 "$ROOT/root/etc/uci-defaults/50-luci-i18n-mwan6-npt-ru" "$STAGE/etc/uci-defaults/"
+
+chmod +x "$ROOT/scripts/stage-docs.sh"
+"$ROOT/scripts/stage-docs.sh" "$STAGE" luci-i18n-mwan6-npt-ru
 
 cat >"$POSTINST" <<'EOF'
 #!/bin/sh
