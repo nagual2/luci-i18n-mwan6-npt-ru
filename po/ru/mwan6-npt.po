@@ -1,0 +1,121 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: luci-app-mwan6-npt\n"
+"Report-Msgid-Bugs-To: https://github.com/nagual2/mwan6-npt-luci/issues\n"
+"POT-Creation-Date: 2025-01-01 00:00+0000\n"
+"PO-Revision-Date: 2026-05-29 12:00+0300\n"
+"Last-Translator: OpenWrt Community\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "NPTv6 Multi-WAN"
+msgstr "NPTv6 Multi-WAN"
+
+msgid "Globals"
+msgstr "Общие"
+
+msgid "Interfaces"
+msgstr "Интерфейсы"
+
+msgid "NPTv6 Multi-WAN — Globals"
+msgstr "NPTv6 Multi-WAN — Общие"
+
+msgid "NPTv6 Multi-WAN — Interfaces"
+msgstr "NPTv6 Multi-WAN — Интерфейсы"
+
+msgid "NPTv6 Multi-WAN — Status"
+msgstr "NPTv6 Multi-WAN — Статус"
+
+msgid "unknown"
+msgstr "неизвестно"
+
+msgid "Service"
+msgstr "Сервис"
+
+msgid "idle (rules applied)"
+msgstr "ожидание (правила применены)"
+
+msgid "Rules: active (%d SNAT)"
+msgstr "Правила: активны (%d SNAT)"
+
+msgid "Rules: none"
+msgstr "Правила: нет"
+
+msgid "IPv6 prefix is required"
+msgstr "Требуется IPv6-префикс"
+
+msgid "Invalid prefix (example: 2001:db8::/56 or fd00:1111::/64)"
+msgstr "Неверный префикс (пример: 2001:db8::/56 или fd00:1111::/64)"
+
+msgid "Enable the service, then configure NPTv6 prefixes per interface. Section names must match OpenWrt interface names (see Network → Interfaces). Mark exactly one interface as LAN/source prefix. Disable interfaces that already carry a routed LAN prefix and do not need NPT."
+msgstr "Включите сервис и настройте префиксы NPTv6 для каждого интерфейса. Имена секций должны совпадать с именами интерфейсов OpenWrt (см. Сеть → Интерфейсы). Отметьте ровно один интерфейс как LAN/источник. Отключите интерфейсы, которые уже несут маршрутизируемый LAN-префикс и не требуют NPT."
+
+msgid "Runtime status"
+msgstr "Состояние в runtime"
+
+msgid "Procd service state and whether NPTv6 nftables rules are currently installed."
+msgstr "Состояние procd-сервиса и установлены ли сейчас правила NPTv6 в nftables."
+
+msgid "Enable mwan6-npt service"
+msgstr "Включить сервис mwan6-npt"
+
+msgid "When enabled, procd starts the service on boot and applies rules after reload."
+msgstr "При включении procd запускает сервис при загрузке и применяет правила после reload."
+
+msgid "NPT interfaces"
+msgstr "Интерфейсы NPT"
+
+msgid "This interface name is already used"
+msgstr "Это имя интерфейса уже используется"
+
+msgid "Enabled"
+msgstr "Включено"
+
+msgid "WAN / LAN prefix"
+msgstr "Префикс WAN / LAN"
+
+msgid "IPv6 prefix for this path. On the default (LAN source) interface this is the LAN prefix used for NPTv6 translation."
+msgstr "IPv6-префикс для этого пути. На интерфейсе по умолчанию (источник LAN) это LAN-префикс для NPTv6."
+
+msgid "LAN source (default)"
+msgstr "Источник LAN (по умолчанию)"
+
+msgid "Mark exactly one enabled interface as the LAN/source prefix. It is excluded from outbound SNAT rules."
+msgstr "Отметьте ровно один включённый интерфейс как LAN/источник. Он исключается из исходящих SNAT-правил."
+
+msgid "NPTv6 rules reloaded."
+msgstr "Правила NPTv6 перезагружены."
+
+msgid "mwan6-npt status failed"
+msgstr "ошибка mwan6-npt status"
+
+msgid "Live output from mwan6-npt. Use the buttons to regenerate or clear nftables hook files."
+msgstr "Вывод mwan6-npt в реальном времени. Кнопки — пересоздать или очистить hook-файлы nftables."
+
+msgid "Update rules"
+msgstr "Обновить правила"
+
+msgid "Flush rules"
+msgstr "Сбросить правила"
+
+msgid "Refresh"
+msgstr "Обновить"
+
+msgid "Status refreshed."
+msgstr "Статус обновлён."
+
+msgid "Update failed"
+msgstr "Ошибка обновления"
+
+msgid "Rules updated and firewall reloaded."
+msgstr "Правила обновлены, firewall перезагружен."
+
+msgid "Flush failed"
+msgstr "Ошибка сброса"
+
+msgid "Rules flushed."
+msgstr "Правила сброшены."
