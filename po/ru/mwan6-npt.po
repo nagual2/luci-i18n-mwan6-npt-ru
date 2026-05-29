@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: luci-app-mwan6-npt\n"
 "Report-Msgid-Bugs-To: https://github.com/nagual2/mwan6-npt-luci/issues\n"
 "POT-Creation-Date: 2025-01-01 00:00+0000\n"
-"PO-Revision-Date: 2026-05-29 12:00+0300\n"
+"PO-Revision-Date: 2026-05-30 12:00+0300\n"
 "Last-Translator: OpenWrt Community\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -105,6 +105,63 @@ msgstr "Сбросить правила"
 msgid "Refresh"
 msgstr "Обновить"
 
+msgid "Configure NPTv6 prefix translation. The LAN prefix is the single source prefix for clients; WAN entries only define outbound translation targets and are not written to network/ip6prefix. Enable the service after adding WAN tunnels."
+msgstr "Настройка NPTv6. LAN-префикс — единственный источник для клиентов; записи WAN задают только цели трансляции и не пишутся в network/ip6prefix. Включите сервис после добавления WAN-туннелей."
+
+msgid "LAN prefix (NPT source)"
+msgstr "LAN-префикс (источник NPT)"
+
+msgid "Note"
+msgstr "Примечание"
+
+msgid "This prefix is used only for NPTv6 translation. Configure PD/RA for clients in Network → Interfaces (single ip6prefix in the system)."
+msgstr "Префикс используется только для NPTv6. PD/RA для клиентов настраиваются в Сеть → Интерфейсы (один ip6prefix в системе)."
+
+msgid "LAN prefix"
+msgstr "LAN-префикс"
+
+msgid "IPv6 prefix of LAN clients (NPT source). Must match the delegated prefix used on the LAN."
+msgstr "IPv6-префикс клиентов LAN (источник NPT). Должен совпадать с делегированным префиксом на LAN."
+
+msgid "Detect from network"
+msgstr "Определить из network"
+
+msgid "Detect"
+msgstr "Определить"
+
+msgid "Detected LAN prefix: %h"
+msgstr "Определён LAN-префикс: %h"
+
+msgid "Could not detect LAN prefix from network configuration"
+msgstr "Не удалось определить LAN-префикс из конфигурации network"
+
+msgid "WAN interfaces (NPT targets)"
+msgstr "WAN-интерфейсы (цели NPT)"
+
+msgid "No available network interfaces to add."
+msgstr "Нет доступных сетевых интерфейсов для добавления."
+
+msgid "Interface"
+msgstr "Интерфейс"
+
+msgid "Add WAN interface"
+msgstr "Добавить WAN-интерфейс"
+
+msgid "WAN NPT prefix"
+msgstr "WAN-префикс NPT"
+
+msgid "Target prefix for NPTv6 on this tunnel. Used for translation only — not written to network configuration."
+msgstr "Целевой префикс NPTv6 на этом туннеле. Только для трансляции — не записывается в network."
+
+msgid "Suggest from interface"
+msgstr "Подсказать с интерфейса"
+
+msgid "Suggest"
+msgstr "Подсказать"
+
+msgid "No global IPv6 address found on this interface"
+msgstr "На интерфейсе не найден глобальный IPv6-адрес"
+
 msgid "Status refreshed."
 msgstr "Статус обновлён."
 
@@ -119,3 +176,18 @@ msgstr "Ошибка сброса"
 
 msgid "Rules flushed."
 msgstr "Правила сброшены."
+
+msgid "Prefix used for NPTv6 translation only. Configure PD/RA for clients in Network → Interfaces (single ip6prefix in the system)."
+msgstr "Используется только для NPTv6. PD/RA для клиентов настраиваются в Сеть → Интерфейсы (один ip6prefix в системе)."
+
+msgid "IPv6 prefix of LAN clients (NPT source). Must match the delegated prefix on the LAN."
+msgstr "IPv6-префикс клиентов LAN (источник NPT). Должен совпадать с делегированным префиксом на LAN."
+
+msgid "Add tunnels from Network → Interfaces. Prefixes here are used for NPT only and are not written to network configuration."
+msgstr "Добавляйте туннели из Сеть → Интерфейсы. Префиксы здесь только для NPT и не записываются в network."
+
+msgid "No WAN interfaces configured. Add a tunnel below."
+msgstr "WAN-интерфейсы не настроены. Добавьте туннель ниже."
+
+msgid "Include this interface in NPTv6 rule generation."
+msgstr "Включить интерфейс в генерацию правил NPTv6."
